@@ -1,0 +1,14 @@
+build/
+dist/
+torchnet.egg-info/
+*/**/__pycache__
+*/**/*.pyc
+.idea/
+.vscode/
+将删除 .idea/inspectionProfiles/
+将删除 .idea/misc.xml
+将删除 .idea/modules.xml
+将删除 .idea/torchnet_Venus.iml
+将删除 .idea/workspace.xml
+将删除 dataset/
+将删除 logger/

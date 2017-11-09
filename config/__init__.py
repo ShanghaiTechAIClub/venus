@@ -1,1 +1,1 @@
-from .ConfigFactory import ConfigFactory
+from .config_manager import ConfigManager

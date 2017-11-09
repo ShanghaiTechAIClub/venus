@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../')
 
-from config import ConfigFactory
+from config import ConfigManager
 
 
 class TestConfig(object):
@@ -13,19 +13,32 @@ class TestConfig(object):
         #Caution: Don't ignore the file suffix such as .py .cfg
 
 
-
-        config = ConfigFactory.create_config('edict_example.py', mode='EDict')
+        cfg_mgr = ConfigManager('edict_example.py', mode='EDict')
+        cfg = cfg_mgr.cfg
 
         #test write and read
-        config['name'] = 'Hello'
-        _name1 = config['name']
+        cfg['name'] = 'Hello'
+        _name1 = cfg['name']
         assert _name1 is 'Hello'
 
-        config.name = 'VeNus'
-        _name2 = config.name
+        cfg.name = 'VeNus'
+        _name2 = cfg.name
         assert _name2 is 'VeNus'
 
+    def test_class_config(self):
 
+        cfg_mgr = ConfigManager('class_example.py', mode='Class')
+        cfg = cfg_mgr.cfg
+
+        #test write and read
+        cfg['name'] = 'Hello'
+        _name1 = cfg['name']
+        assert _name1 is 'Hello'
+
+        cfg.name = 'VeNus'
+        _name2 = cfg.name
+        assert _name2 is 'VeNus'
 
 if __name__ == '__main__':
     TestConfig().test_edict_config()
+    TestConfig().test_class_config()

@@ -1,0 +1,18 @@
+
+[basic]
+name = xxx_config
+
+
+[training]
+
+[validation]
+
+[dataloader]
+
+
+[optim]
+
+# PROBLEM: How to express list
+
+
+
